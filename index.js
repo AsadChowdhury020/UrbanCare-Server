@@ -134,7 +134,20 @@ async function run() {
       res.send(result);
     });
 
-    
+
+    // Contributions related Api's
+    app.get("/contributions", async (req, res) => {
+      const query = {};
+      if (req.query.issueId) {
+        query.issueId = req.query.issueId;
+      }
+      if (req.query.email) {
+        query.email = req.query.email;
+      }
+      const result = await contributionsCollection.find(query).toArray();
+      res.send(result);
+    });
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
