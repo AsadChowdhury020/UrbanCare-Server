@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Broken streetlight near Lake Road",
+    "category": "Broken Public Property",
+    "location": "Banani, Dhaka",
+    "description": "The main streetlight near the bus stop has been out for a week.",
+    "image": "https://i.ibb.co.com/1Jnb7rLj/Broken-streetlight.jpg",
+    "amount": 150,
+    "email": "rahman.sajib@mail.com",
+    "date": "2025-10-20"
+  },
+  {
+    "title": "Overflowing garbage on Road 21",
+    "category": "Garbage",
+    "location": "Mohakhali, Dhaka",
+    "description": "Garbage has not been collected for 5 days.",
+    "image": "https://i.ibb.co.com/3mzxJ8GP/garbedge.jpg",
+    "amount": 200,
+    "email": "user@mail.com",
+    "date": "2025-10-26"
+  },
+  {
+    "title": "Water leakage near school gate",
+    "category": "Broken Public Property",
+    "location": "Mirpur-10, Dhaka",
+    "description": "Continuous water leakage is making the road muddy and slippery.",
+    "image": "https://i.ibb.co.com/yHXyx6M/Water-leakage.webp",
+    "amount": 300,
+    "email": "nabila.akhtar@mail.com",
+    "date": "2025-10-18"
+  },
+  {
+    "title": "Illegal parking blocking the road",
+    "category": "Illegal Construction",
+    "location": "Gulshan-2, Dhaka",
+    "description": "Cars are parking on both sides, blocking ambulances and fire trucks.",
+    "image": "https://i.ibb.co.com/XkFSwNpz/Illegal-Parking.jpg",
+    "amount": 250,
+    "email": "tariq.kabir@mail.com",
+    "date": "2025-10-21"
+  },
+  {
+    "title": "Damaged manhole cover",
+    "category": "Road Damage",
+    "location": "Dhanmondi 15, Dhaka",
+    "description": "Open manhole poses a risk to pedestrians at night.",
+    "image": "https://i.ibb.co.com/YBzKGqzJ/Damage-manhole-cover.jpg",
+    "amount": 180,
+    "email": "sofia.hasan@mail.com",
+    "date": "2025-10-19"
+  },
+  {
+    "title": "Tree fallen after storm",
+    "category": "Broken Public Property",
+    "location": "Shyamoli, Dhaka",
+    "description": "A large tree has blocked one lane after last night's storm.",
+    "image": "https://i.ibb.co.com/fYZMZszm/TreeFall.webp",
+    "amount": 400,
+    "email": "aminul.islam@mail.com",
+    "date": "2025-10-25"
+  },
+  {
+    "title": "Mosquito infestation in park",
+    "category": "Garbage",
+    "location": "Uttara Sector-7, Dhaka",
+    "description": "Park area has stagnant water; urgent cleaning is needed.",
+    "image": "https://i.ibb.co.com/wFFsCR7w/Mosque-Infection.jpg",
+    "amount": 350,
+    "email": "farzana.khan@mail.com",
+    "date": "2025-10-23"
+  },
+  {
+    "title": "Street flooding after rain",
+    "category": "Road Damage",
+    "location": "Rampura, Dhaka",
+    "description": "Poor drainage causes flooding even with light rain.",
+    "image": "https://i.ibb.co.com/B5zYLZ8p/Street-Flooding.jpg",
+    "amount": 220,
+    "email": "mehedi.hasan@mail.com",
+    "date": "2025-10-24"
+  },
+  {
+    "title": "Roadside shop blocking sidewalk",
+    "category": "Illegal Construction",
+    "location": "Badda, Dhaka",
+    "description": "Vendors have occupied the footpath, making it difficult to walk.",
+    "image": "https://i.ibb.co.com/TMhXzXcn/Roadside.jpg",
+    "amount": 190,
+    "email": "sumaiya.afrin@mail.com",
+    "date": "2025-10-28"
+  },
+  {
+    "title": "Potholes damaging vehicles",
+    "category": "Road Damage",
+    "location": "Tejgaon Industrial Area, Dhaka",
+    "description": "Several deep potholes are causing accidents and tire damage.",
+    "image": "https://i.ibb.co.com/SDR6Ynq2/Potholes.jpg",
+    "amount": 270,
+    "email": "arif.hossain@mail.com",
+    "date": "2025-10-22"
+  },
+  {
+    "title": "Public toilet in poor condition",
+    "category": "Broken Public Property",
+    "location": "Farmgate, Dhaka",
+    "description": "The public restroom near the bus terminal is dirty and lacks running water.",
+    "image": "https://i.ibb.co.com/tpKS4CBn/Public-Toilate-Poor.jpg",
+    "amount": 310,
+    "email": "mim.akter@mail.com",
+    "date": "2025-10-29"
+  },
+  {
+    "title": "Broken bench at bus stop",
+    "category": "Broken Public Property",
+    "location": "Bashundhara, Dhaka",
+    "description": "One of the benches at the main bus stop is broken, making it difficult for elderly passengers to sit and wait comfortably.",
+    "image": "https://i.ibb.co.com/jvMCbQ7B/broken-Banch.webp",
+    "amount": 120,
+    "email": "mohona.khan@mail.com",
+    "date": "2025-11-08"
+  },
+  {
+    "title": "Overflowing dustbins near park gate",
+    "category": "Garbage",
+    "location": "Mirpur DOHS, Dhaka",
+    "description": "The dustbins near the park entrance are overflowing with waste, spreading a foul smell and attracting stray dogs.",
+    "image": "https://i.ibb.co.com/3mzxJ8GP/garbedge.jpg",
+    "amount": 230,
+    "email": "sakib.alam@mail.com",
+    "date": "2025-11-09"
+  }
+]
