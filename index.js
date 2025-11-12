@@ -85,6 +85,23 @@ async function run() {
       const result = await issuesCollection.find(query).toArray();
       res.send(result);
     });
+
+    
+    app.get("/issues/:id", async (req, res) => {
+      const id = req.params.id;
+      try {
+        const query = { _id: new ObjectId(id) };
+        const result = await issuesCollection.findOne(query);
+
+        if (!result) {
+          return res.status(404).send({ message: "Issue not found" });
+        }
+
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: "Server error", error });
+      }
+    });
     
 
     // Send a ping to confirm a successful connection
