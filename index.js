@@ -68,6 +68,23 @@ async function run() {
       const result = await issuesCollection.insertOne(newIssue);
       res.send(result);
     });
+
+    app.get("/all-issues", async (req, res) => {
+      const result = await issuesCollection.find().toArray();
+      res.send(result);
+    });
+
+    app.get("/issues", verifyToken, async (req, res) => {
+      const decodedEmail = req.decodedUser.email;
+      const email = req.query.email;
+      if (email !== decodedEmail) {
+        return res.status(403).send({ message: "Forbidden access" });
+      }
+
+      const query = { email: email };
+      const result = await issuesCollection.find(query).toArray();
+      res.send(result);
+    });
     
 
     // Send a ping to confirm a successful connection
