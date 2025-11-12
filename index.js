@@ -57,101 +57,18 @@ async function run() {
     const issuesCollection = db.collection("issues");
     const contributionsCollection = db.collection("contributions");
 
-    // Issues related API's
-    app.post("/issues", async (req, res) => {
+    app.post("/issues", verifyToken, async (req, res) => {
       const newIssue = req.body;
+      const decodedEmail = req.decodedUser.email;
+
+      if (newIssue.email !== decodedEmail) {
+        return res.status(403).send({ message: "Forbidden - Email mismatch" });
+      }
+
       const result = await issuesCollection.insertOne(newIssue);
       res.send(result);
     });
-
-    // app.get("/issues", Middleware, async (req, res) => {
-    //   const email = req.query.email;
-    //   const query = {};
-    //   if (email) {
-    //     query.email = email;
-    //   }
-    //   const cursor = issuesCollection.find(query);
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // });
-
-    // app.get("/issues/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: new ObjectId(id) };
-    //   const result = await issuesCollection.findOne(query);
-    //   res.send(result);
-    // });
-
-    app.get("/issues", verifyToken, async (req, res) => {
-      const decodedEmail = req.decodedUser.email;
-      const email = req.query.email;
-      if (email !== decodedEmail) {
-        return res.status(403).send({ message: "Forbidden access" });
-      }
-
-      const query = { email: email };
-      const result = await issuesCollection.find(query).toArray();
-      res.send(result);
-    });
-
-    app.put("/issues/:id", async (req, res) => {
-      const id = req.params.id;
-      const updatedIssue = req.body;
-      const query = { _id: new ObjectId(id) };
-      const update = {
-        $set: {
-          ...updatedIssue,
-        },
-      };
-      const options = {};
-      const result = await issuesCollection.updateOne(query, update, options);
-      res.send(result);
-    });
-
-    app.delete("/issues/:id", async (req, res) => {
-      const id = req.params.id;
-      const query = { _id: new ObjectId(id) };
-      const result = await issuesCollection.deleteOne(query);
-      res.send(result);
-    });
-
-    app.get("/recent-issues", async (req, res) => {
-      const email = req.query.email;
-      const query = {};
-      if (email) {
-        query.email = email;
-      }
-      const cursor = issuesCollection.find(query).sort({ date: -1 }).limit(6);
-      const result = await cursor.toArray();
-      res.send(result);
-    });
-
-    // Contributions related Api's
-    app.get("/contributions", async (req, res) => {
-      const query = {};
-      if (req.query.issueId) {
-        query.issueId = req.query.issueId;
-      }
-      if (req.query.email) {
-        query.email = req.query.email;
-      }
-      const result = await contributionsCollection.find(query).toArray();
-      res.send(result);
-    });
-
-    app.post("/contributions", async (req, res) => {
-      const newContribution = req.body;
-      newContribution.date = new Date();
-      const result = await contributionsCollection.insertOne(newContribution);
-      res.send(result);
-    });
-
-    app.delete("/contributions/:id", async (req, res) => {
-      const id = req.params.id;
-      const query = { _id: new ObjectId(id) };
-      const result = await contributionsCollection.deleteOne(query);
-      res.send(result);
-    });
+    
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
