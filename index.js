@@ -86,7 +86,6 @@ async function run() {
       res.send(result);
     });
 
-    
     app.get("/issues/:id", async (req, res) => {
       const id = req.params.id;
       try {
@@ -102,7 +101,20 @@ async function run() {
         res.status(500).send({ message: "Server error", error });
       }
     });
-    
+
+    app.put("/issues/:id", async (req, res) => {
+      const id = req.params.id;
+      const updatedIssue = req.body;
+      const query = { _id: new ObjectId(id) };
+      const update = {
+        $set: {
+          ...updatedIssue,
+        },
+      };
+      const options = {};
+      const result = await issuesCollection.updateOne(query, update, options);
+      res.send(result);
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
